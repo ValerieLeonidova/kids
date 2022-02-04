@@ -1,0 +1,79 @@
+.footer {
+  background: cl(white);
+  padding: rem(20px 36px);
+  color: cl(text);
+  @include media-breakpoint-down(sm) {
+    padding: rem(20px 26px);
+  }
+  &-social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: rem(28px);
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include circle(36px);
+      color:cl(secondary);
+      margin-left: rem(18px);
+      border:rem(2px solid cl(secondary));
+      @include media-breakpoint-down(sm) {
+        margin: rem(0 15px);
+      }
+      &:hover {
+        text-decoration: none;
+        color:cl(primary);
+        border-color:cl(primary);
+      }
+      i {
+        font-size: rem(16px);
+      }
+    }
+  }
+  &-logo {
+    display: block;
+    margin: 0 auto;
+    width:rem(124px);
+    img {
+      width:100%;
+      height: auto;
+    }
+  }
+  &-nav{
+    padding-top: rem(28px);
+    @include media-breakpoint-down(xs) {
+      padding-top: rem(12px);
+    }
+    .nav{
+      display: flex;
+      align-items: center;
+      @include media-breakpoint-down(xs) {
+        flex-direction: column;
+
+      }
+      li{
+        position: relative;
+        margin-right: rem(20px);
+        @include media-breakpoint-down(xs) {
+          margin: rem(2px 0);
+        }
+        a{
+          color: cl(secondary);
+          font-size: rem(18px);
+          line-height: rem(36px);
+        }
+      }
+    }
+  }
+  &-copy {
+    margin: 1.25rem auto 0;
+    display: block;
+    @extend .text-center;
+    font-size: rem(14px);
+  }
+}
+

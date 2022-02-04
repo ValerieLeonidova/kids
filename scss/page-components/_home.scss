@@ -1,0 +1,21 @@
+.more-section{
+  .ttl{
+    font-size: rem(100px);
+    line-height: rem(100px);
+    font-weight: 700;
+    @extend .ttu;
+  }
+  @supports (-webkit-text-stroke: 1px blue) {
+    .ttl {
+      color: transparent;
+      -webkit-text-stroke: 2px cl(secondary);
+      text-shadow: -5px -2px blue, -4px -1px #fff;
+    }
+  }
+  @supports (-webkit-background-clip: text) {
+    .ttl {
+      background: white;
+      -webkit-background-clip: text;
+    }
+  }
+}

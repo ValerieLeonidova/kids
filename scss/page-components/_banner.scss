@@ -1,0 +1,316 @@
+/* banner start */
+.banner {
+  position: relative;
+  min-height: 100vh;
+  //padding: rem(135px 0 100px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include media-breakpoint-down(sm) {
+    height: 41rem;
+  }
+  @include media-breakpoint-down(xs) {
+    height: 100vh;
+    align-items: flex-start;
+    padding-top: 8rem;
+    background-position: 0 50%;
+  }
+  &-mask {
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    -webkit-mask: url(https://valerieleonidova.github.io/kids/img/mask.png);
+    //-webkit-mask: url(../img/mask.png);
+    -webkit-mask-size: 100%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    z-index: 2;
+    &--top_left {
+      @include media-breakpoint-up(lg)  {
+        top: 13%;
+        width: rem(372px);
+        height: rem(307px);
+      }
+      @include media-breakpoint-up(md) {
+        top:5%;
+        width: 21.25rem;
+        height: 17.1875rem;
+        left: 3%;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        animation: morphing-1 15s linear infinite;
+        animation-direction: alternate;
+      }
+    }
+    &--bottom_left {
+      width: rem(250px);
+      height: rem(200px);
+      left: 3%;
+      bottom: 2%;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      animation: morphing-2 12s linear infinite;
+      animation-direction: alternate;
+    }
+    &--top_right {
+      @include media-breakpoint-up(lg)  {
+        top: 13%;
+        width: rem(380px);
+        height: rem(300px);
+      }
+      @include media-breakpoint-up(md) {
+        top:5%;
+        width: 21.75rem;
+        height: 16.75rem;
+        right: 3%;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        animation: morphing-3 20s linear infinite;
+        animation-direction: alternate-reverse;
+      }
+    }
+    &-img {
+      position: fixed;
+      left:0;
+      top:0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      @include media-breakpoint-down(xs) {
+        background-position: 0 50%;
+      }
+    }
+  }
+  @keyframes morphing-1 {
+    0% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      left: 3%;
+      top: 13%;
+    }
+    25% {
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+      left: 6%;
+      top: 15%;
+    }
+    50% {
+      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+      left: 8%;
+      top: 17%;
+    }
+    75% {
+      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+      left: 6%;
+      top: 20%;
+    }
+    100% {
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+      left: 4%;
+      top: 15%;
+    }
+  }
+  @keyframes morphing-2 {
+    0% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    25% {
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+      left: 8%;
+      bottom: 10%;
+    }
+    50% {
+      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    }
+    75% {
+      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+      left: 8%;
+      bottom: 2%;
+    }
+    100% {
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+  }
+  @keyframes morphing-3 {
+    0% {
+      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+    }
+    25% {
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+    50% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      top: 25%;
+    }
+    75% {
+      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    }
+    100% {
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+  }
+  &-image {
+    width:36%;
+    padding-top: 36%;
+    border-radius: 50%;
+    box-shadow:rem(0 19px 90px cl(black, .46));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 3;
+    @include media-breakpoint-down(md) {
+      width: 60%;
+      padding-top: 60%;
+    }
+    @include media-breakpoint-down(xs) {
+      width: 90%;
+      padding-top: 90%;
+    }
+  }
+  &-top-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @extend .full;
+    z-index: 2;
+    object-fit: cover;
+  }
+  &-purple-layer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @extend .full;
+    z-index: 1;
+    object-fit: cover;
+    background-color: rgba(91,66,154,0.85);
+  }
+  &-text {
+    position: absolute;
+    left:0;
+    bottom: 17%;
+    width:100%;
+    color:cl(white);
+    z-index: 6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    @include media-breakpoint-down(md) {
+      padding: rem(0 25px 100px 25px);
+    }
+    @include media-breakpoint-down(sm) {
+      padding: rem(0 25px);
+      bottom: 27%;
+    }
+    .ttl-wrap{
+      position: relative;
+      margin: rem(0 0 2px);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+       justify-content: center;
+      padding: rem(5px 120px 17px 120px);
+      width: fit-content;
+      @include media-breakpoint-down(md) {
+        padding: rem(5px 50px 17px 50px);
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-size: 96% 100%;
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+        @extend .pos-center;
+        background-image: url("../img/banner-text-bg-mob.png");
+        z-index: 1;
+        @include media-breakpoint-up(md) {
+          background-image: url("../img/banner-ttl-bg.png");
+        }
+      }
+      .word{
+        position: relative;
+        margin: 0 1rem;
+        .ttl{
+          font-size: rem(100px);
+          line-height: rem(100px);
+          color: cl(primary);
+          font-weight: bold;
+          @extend .ttu;
+          position: relative;
+          z-index: 3;
+          letter-spacing: rem(10px);
+          text-align: center;
+          text-shadow: rem(5px 5px 0 cl(secondary));
+          @include media-breakpoint-down(lg) {
+            font-size: rem(80px);
+            line-height: rem(85px);
+
+          }
+          @include media-breakpoint-down(sm) {
+            font-size: rem(55px);
+            line-height: rem(60px);
+
+          }
+        }
+      }
+
+      .arrow-link{
+        position: absolute;
+        @extend .pos-centerY;
+        right: rem(-98px);
+        z-index: 4;
+      }
+    }
+    .slogan{
+      position: relative;
+      display: block;
+      width: fit-content;
+      padding: rem(11px 95px);
+      text-align: center;
+      @include media-breakpoint-down(sm) {
+        padding: rem(10px 65px);
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        @extend .pos-center;
+        background-image: url("../img/banner-text-bg-mob.png");
+        z-index: 1;
+        @include media-breakpoint-up(md) {
+          background-image: url("../img/banner-slogan-bg.png");
+        }
+      }
+      p {
+        position: relative;
+        z-index: 3;
+        font-size: rem(24px);
+        font-weight: 700;
+        line-height: rem(30px);
+        color: cl(secondary);
+        text-align: center;
+        margin: 0;
+        @include media-breakpoint-down(md) {
+          font-size: rem(20px);
+          line-height: rem(26px);
+        }
+        @include media-breakpoint-down(sm) {
+          font-size: rem(18px);
+          line-height: rem(25px);
+        }
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+/* banner end */
